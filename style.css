@@ -1,0 +1,111 @@
+:root{
+  --blue:#2a2cff; --pink:#ff3ea5; --yellow:#ffe500; --lime:#b8ff2c;
+  --orange:#ff7a1a; --ink:#16004d; --white:#fffdf5;
+  --display:'Bagel Fat One','Impact',sans-serif;
+  --body:'Bricolage Grotesque',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);color:var(--white);overflow-x:hidden;
+  background:
+    radial-gradient(circle,rgba(255,255,255,.18) 2px,transparent 2.5px) 0 0/26px 26px,
+    linear-gradient(160deg,var(--blue),#5a1cff 60%,#a31cff);
+  background-attachment:fixed;
+}
+h1,h2,.big,.btn,.badge,.sticker,.card b{font-family:var(--display)}
+:focus-visible{outline:4px solid var(--yellow);outline-offset:4px}
+
+/* tapes */
+.tape{background:var(--yellow);color:var(--ink);border-block:4px solid var(--ink);overflow:hidden;white-space:nowrap;font-family:var(--display);font-size:1.3rem;padding:.4rem 0}
+.tape-mid{background:var(--lime);transform:rotate(-2deg);margin:3rem -2rem}
+.track{display:inline-flex;animation:scroll 22s linear infinite}
+.track span{padding-right:1rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* hero */
+.hero{position:relative;text-align:center;padding:4rem 1rem 5rem}
+.hello{font-size:clamp(1.3rem,4vw,2rem);font-weight:800;color:var(--yellow);transform:rotate(-3deg)}
+h1{font-size:clamp(3.4rem,17vw,11rem);line-height:.95;margin:.5rem 0 1rem;display:flex;justify-content:center;flex-wrap:wrap;gap:0 .02em}
+h1 span{display:inline-block;-webkit-text-stroke:4px var(--ink);paint-order:stroke fill;text-shadow:6px 6px 0 var(--ink);animation:bob 2.4s ease-in-out infinite}
+h1 span:nth-child(1){color:var(--yellow);--r:-6deg}
+h1 span:nth-child(2){color:var(--pink);--r:4deg;animation-delay:.15s}
+h1 span:nth-child(3){color:var(--lime);--r:-3deg;animation-delay:.3s}
+h1 span:nth-child(4){color:var(--orange);--r:6deg;animation-delay:.45s}
+h1 span:nth-child(5){color:var(--white);--r:-5deg;animation-delay:.6s}
+h1 span:nth-child(6){color:var(--yellow);--r:3deg;animation-delay:.75s}
+h1 span:nth-child(7){color:var(--pink);--r:-4deg;animation-delay:.9s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-14px) rotate(calc(var(--r) * -1))}}
+.sub{max-width:34ch;margin:0 auto 1.8rem;font-size:1.2rem;font-weight:700}
+.badge{position:absolute;top:1rem;right:4%;width:7.5rem;height:7.5rem;border-radius:50%;background:var(--pink);color:var(--white);border:4px solid var(--ink);box-shadow:6px 6px 0 var(--ink);display:grid;place-content:center;font-size:3rem;line-height:1;animation:spin 12s linear infinite}
+.badge small{font-family:var(--body);font-weight:800;font-size:.6rem;max-width:7ch;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sticker{position:absolute;background:var(--lime);color:var(--ink);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:.5rem .9rem;font-size:1rem;line-height:1.1}
+.s1{top:2rem;left:4%;transform:rotate(-9deg)}
+.s2{bottom:1.2rem;left:8%;background:var(--yellow);transform:rotate(6deg)}
+
+/* buttons */
+.btn{background:var(--yellow);color:var(--ink);border:4px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:.9rem 1.6rem;font-size:1.2rem;cursor:pointer;transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translate(-2px,-2px) rotate(-1deg);box-shadow:9px 9px 0 var(--ink)}
+.btn:active{transform:translate(5px,5px);box-shadow:1px 1px 0 var(--ink)}
+.btn.alt{background:var(--lime)}
+
+/* sections */
+section{padding:2rem 1rem;max-width:1000px;margin:0 auto}
+h2{font-size:clamp(2.2rem,8vw,4rem);color:var(--yellow);text-shadow:4px 4px 0 var(--ink);text-align:center;transform:rotate(-1.5deg);margin-bottom:.4rem}
+.note{text-align:center;font-weight:700;margin-bottom:1.6rem}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.4rem}
+.card{border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:1.3rem;color:var(--ink);text-align:center}
+.card b{display:block;font-size:4rem;line-height:1}
+.card span{font-weight:800}
+.c1{background:var(--pink);transform:rotate(-3deg)}
+.c2{background:var(--yellow);transform:rotate(2deg)}
+.c3{background:var(--lime);transform:rotate(-2deg)}
+.c4{background:var(--orange);transform:rotate(3deg)}
+
+/* gallery */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem 1.5rem}
+.pola{background:var(--white);color:var(--ink);padding:.8rem .8rem 1rem;border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);transition:transform .2s}
+.pola img{display:block;object-position:center 20%}
+.pola:hover{transform:rotate(0) scale(1.05);z-index:2}
+.ph,.pola img{width:100%;aspect-ratio:1;object-fit:cover;display:grid;place-content:center;font-size:5rem;border:3px solid var(--ink)}
+.pola figcaption{font-family:var(--display);text-align:center;margin-top:.6rem;font-size:1.1rem}
+.p1{transform:rotate(-4deg)}.p1 .ph{background:var(--yellow)}
+.p2{transform:rotate(3deg)}.p2 .ph{background:var(--pink)}
+.p3{transform:rotate(-2deg)}.p3 .ph{background:var(--lime)}
+.p4{transform:rotate(4deg)}.p4 .ph{background:var(--orange)}
+.p5{transform:rotate(-3deg)}.p5 .ph{background:#6ee7ff}
+.p6{transform:rotate(2deg)}.p6 .ph{background:var(--yellow)}
+
+/* oracle */
+.oracle{text-align:center}
+.ball{width:min(320px,80vw);aspect-ratio:1;margin:0 auto 1.6rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#7a4dff,var(--ink) 70%);border:5px solid var(--ink);box-shadow:8px 8px 0 var(--pink);display:grid;place-content:center;padding:2rem;font-family:var(--display);font-size:1.4rem;line-height:1.25;color:var(--lime)}
+.ball.pop{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.08) rotate(4deg)}}
+
+/* wall */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+blockquote{padding:1.2rem;color:var(--ink);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);font-weight:800;font-size:1.1rem}
+cite{display:block;margin-top:.8rem;font-style:normal;font-family:var(--display)}
+.n1{background:var(--yellow);transform:rotate(-2deg)}
+.n2{background:var(--pink);transform:rotate(2deg)}
+.n3{background:var(--lime);transform:rotate(-1deg)}
+.n4{background:#6ee7ff;transform:rotate(3deg)}
+
+footer{text-align:center;padding:4rem 1rem 3rem;font-weight:700}
+.big{font-size:clamp(1.8rem,7vw,3.5rem);color:var(--lime);text-shadow:4px 4px 0 var(--ink);margin-bottom:.5rem}
+
+/* falling chickens */
+.fall{position:fixed;top:-3rem;z-index:99;pointer-events:none;animation:drop linear forwards}
+@keyframes drop{to{transform:translateY(115vh) rotate(540deg)}}
+
+@media (max-width:600px){
+  .badge{width:5.5rem;height:5.5rem;font-size:2.2rem;top:.5rem}
+  .s1{top:.8rem;left:2%}
+  .hero{padding-top:6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .track,h1 span,.badge{animation:none}
+  .fall{display:none}
+}
